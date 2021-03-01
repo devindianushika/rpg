@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using dotnet_rpg.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ namespace dotnet_rpg.Controllers
     {
         private static List<Character> characters = new List<Character>(){
     new Character(),
-    new Character { Name = "Sam",Intelligence=20,Strength=258
+    new Character {Id= 1, Name = "Sam",Intelligence=20,Strength=258
     }
         };
         [HttpGet]
@@ -19,11 +20,18 @@ namespace dotnet_rpg.Controllers
         {
             return Ok(characters);
         }
-        [HttpGet]
-        public IActionResult GetSingleCharacter()
+        [HttpGet("{id}")]
+        public IActionResult GetSingleCharacter(int id)
         {
-            return Ok(characters[0]);
+            return Ok(characters.FirstOrDefault(c => c.Id == id));
         }
 
+        [HttpPost]
+        [Route("add")]
+        public IActionResult AddCharacter(Character usercharacter)
+        {
+          characters.Add(usercharacter);
+            return Ok(characters);
+        }
     }
 }
