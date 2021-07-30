@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lCBHm4HpBWU908fLaWRnCwoJKxFMYmQNmLhqEt0gJOZZMpzXFjesA9yAbLIxO/PB3B1RQS28QsBAR4F3lDZM+w==",
+  "dgSpecHash": "dhbFezovH7oUxpwMZbp+sq8eCiaxoHjZWclB0GwqbnvHFyvJJQeTqKDtDuZJ3HJjgkFqRuHA/Is7xL8WOLJDNA==",
   "success": true,
   "projectFilePath": "E:\\audalia\\dotnet-rpg\\dotnet-rpg.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Devindi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }
