@@ -2,6 +2,8 @@
 using dotnet_rpg.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+
 namespace dotnet_rpg.Services.CharacterService
 {
     public class CharacterService : ICharcterService
@@ -11,22 +13,29 @@ namespace dotnet_rpg.Services.CharacterService
     new Character { Id = 1, Name = "Sam"}
 };
 
-        public List<Character> AddCharacter(Character newcharacter)
+        public async Task<ServiceResponse<List<Character>>> AddCharacter(Character newcharacter)
         {
+            ServiceResponse<List<Character>> serviceResponse = new ServiceResponse<List<Character>>();
             characters.Add(newcharacter);
-            return characters;
+            serviceResponse.Data = characters;
+            return serviceResponse;
 
         }
 
 
-        public List<Character> GetAllCharacters()
+        public async Task<ServiceResponse<List<Character>>> GetAllCharacters()
         {
-            return characters;
+            ServiceResponse<List<Character>> serviceResponse = new ServiceResponse<List<Character>>();
+            serviceResponse.Data = characters;
+            return serviceResponse;
         }
 
-        public Character GetCharacterById(int id)
+        public async Task<ServiceResponse<Character>> GetCharacterById(int id)
         {
-            return characters.FirstOrDefault(c => c.Id == id);
+            ServiceResponse<Character> serviceResponse = new ServiceResponse<Character>();
+            serviceResponse.Data = characters.FirstOrDefault(c => c.Id == id);
+
+            return serviceResponse;
         }
 
 
