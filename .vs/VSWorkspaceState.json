@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\Services",
+    "\\Services\\CharacterService"
   ],
+  "SelectedNode": "\\Services\\CharacterService\\ICharcterService.cs",
   "PreviewInSolutionExplorer": false
 }
