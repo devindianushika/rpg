@@ -18,3 +18,6 @@ E:\audalia\dotnet-rpg\obj\Debug\netcoreapp3.1\dotnet-rpg.dll
 E:\audalia\dotnet-rpg\obj\Debug\netcoreapp3.1\dotnet-rpg.pdb
 E:\audalia\dotnet-rpg\obj\Debug\netcoreapp3.1\dotnet-rpg.genruntimeconfig.cache
 E:\audalia\dotnet-rpg\obj\Debug\netcoreapp3.1\scopedcss\bundle\dotnet-rpg.styles.css
+E:\audalia\dotnet-rpg\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\audalia\dotnet-rpg\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\audalia\dotnet-rpg\obj\Debug\netcoreapp3.1\dotnet-rpg.csproj.CopyComplete
