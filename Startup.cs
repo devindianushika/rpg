@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using dotnet_rpg.Data;
 
 namespace dotnet_rpg
 {
@@ -27,6 +29,7 @@ namespace dotnet_rpg
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<ICharcterService, CharacterService>();
