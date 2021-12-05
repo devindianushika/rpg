@@ -21,10 +21,10 @@ namespace dotnet_rpg.Services.CharacterService
             _mapper = mapper;
             _context = context;
         }
-        private static List<Character> characters = new List<Character> {
-    new Character(),
-    new Character { Id = 1, Name = "Sam"}
-};
+//         private static List<Character> characters = new List<Character> {
+//     new Character(),
+//     new Character { Id = 1, Name = "Sam"}
+// };
 
         public async Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newcharacter)
         {
