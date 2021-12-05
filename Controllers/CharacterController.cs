@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 using dotnet_rpg.Services.CharacterService;
 using System.Threading.Tasks;
 using dotnet_rpg.Dtos.Character;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace dotnet_rpg.Controllers
 
-{
+{   [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class CharacterController : ControllerBase
@@ -24,9 +26,10 @@ namespace dotnet_rpg.Controllers
         [HttpGet]
         [Route("Getall")]
         public async Task<IActionResult> Get()
+        
         {
-
-            return Ok(await _charcterService.GetAllCharacters());
+            int userid = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            return Ok(await _charcterService.GetAllCharacters(userid));
         }
 
 
