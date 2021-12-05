@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,7 +52,7 @@ namespace dotnet_rpg.Data
             }
 
             else{
-                response.Data = user.Id.ToString();
+                response.Data = CreateToken(user);
 
             }
 
@@ -92,6 +93,10 @@ private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] pas
         }
         return true;
     }
+}
+
+private string CreateToken(User user){
+    return string.Empty;
 }
 
     }
