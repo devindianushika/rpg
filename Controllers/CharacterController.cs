@@ -28,8 +28,8 @@ namespace dotnet_rpg.Controllers
         public async Task<IActionResult> Get()
         
         {
-            int userid = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
-            return Ok(await _charcterService.GetAllCharacters(userid));
+            //int userid = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            return Ok(await _charcterService.GetAllCharacters());
         }
 
 

@@ -17,6 +17,7 @@ using dotnet_rpg.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace dotnet_rpg
 {
@@ -37,6 +38,7 @@ namespace dotnet_rpg
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<ICharcterService, CharacterService>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
